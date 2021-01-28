@@ -1,0 +1,178 @@
+/* RESET CSS */
+*, *:before, *:after
+  box-sizing: border-box
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+  font-family: 'Rubik', sans-serif
+  vertical-align: baseline
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  text-size-adjust: none
+
+footer, header, nav, section, main
+  display: block
+
+body
+  line-height: 1
+
+ol, ul
+  list-style: none
+
+blockquote, q
+  quotes: none
+
+blockquote:before, blockquote:after, q:before, q:after
+  content: ''
+  content: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+input
+  -webkit-appearance: none
+  border-radius: 0
+
+/* VARIABLES */
+$blue-color: #215398
+$lightBlue-color: #f1f6fc
+$magenta-color: #FF3859
+$blackText-color: #2d3236
+$grayText-color: #808080
+body
+  margin: 0
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+code
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+
+.container
+  .section
+    padding: 60px 10px
+    .wrap
+      max-width: 1036px
+      margin: 0 auto
+    &--blue
+      background: $blue-color
+      >*
+        color: white
+    &--lightBlue
+      background: $lightBlue-color
+    &--dott
+      position: relative
+      &::after
+        content: ''
+        background: $magenta-color
+        width: 32px
+        height: 32px
+        position: absolute
+        left: 50%
+        transform: translate(-50%,50%)
+        bottom: 0
+        border-radius: 50%
+    &__heading
+      font-size: 40px
+      line-height: 52px
+      text-align: center
+      &--small
+        font-size: 30px
+        line-height: 32px
+        margin-bottom: 20px
+    &__paragraph
+      font-size: 20px
+      line-height: 24px
+      text-align: center
+      margin-bottom: 40px
+  .columns
+    .boxes
+      display: flex
+      flex-direction: column
+      @media screen and (min-width: 768px)
+        flex-direction: row
+.box
+  width: 100%
+  background: white
+  min-height: 228px
+  margin-bottom: 20px
+  padding: 36px 27px
+  text-align: center
+  @media screen and (min-width: 768px)
+    margin-bottom: 0px
+    &:nth-child(2)
+      margin: 0 20px
+  &:last-child
+    margin-bottom: 0
+  &__heading
+    font-size: 20px
+    line-height: 23.7px
+    color: $blackText-color
+  &__paragraph
+    font-size: 15px
+    line-height: 24px
+    color: $grayText-color
+    margin: 12px 0
+  &__image
+    margin: auto
+
+.slider
+  .box
+    @media screen and (min-width: 768px)
+      &:nth-child(2)
+        margin: 0px
+  .slick-slider
+    .slick-prev, .slick-next
+      height: 48px
+      width: 48px
+    .slick-prev
+      left: -70px
+      &::before
+        content: ''
+        height: 48px
+        width: 48px
+        display: block
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy42MjggMjQuMDA5M0wyOC40MTMzIDEzLjE3NjZDMjguNDIyMyAxMy4xNjc2IDI4LjQzMTkgMTMuMTU4IDI4LjQ0MDkgMTMuMTQ4NEMyOC42ODM1IDEyLjg4MzYgMjguNjcwOSAxMi40NjYzIDI4LjQxMzMgMTIuMjE3MkMyOC4yODQyIDEyLjA4NjkgMjguMTA5NSAxMi4wMTQyIDI3LjkyODggMTIuMDE0MkMyNy43NTM1IDEyLjAxNzIgMjcuNTg2NiAxMi4wOTA1IDI3LjQ2MjMgMTIuMjE3MkwxNi4xOTI1IDIzLjUyOTZDMTUuOTQwOSAyMy43OTY4IDE1Ljk0MDkgMjQuMjIxOSAxNi4xOTI1IDI0LjQ4OTFMMjcuNDYyMyAzNS44MjAxQzI3LjcyOTUgMzYuMDc4OSAyOC4xNDYyIDM2LjA3ODkgMjguNDEzMyAzNS44MjAxQzI4LjQyMjMgMzUuODEwNSAyOC40MzE5IDM1LjgwMTUgMjguNDQwOSAzNS43OTE5QzI4LjY4MzUgMzUuNTI3MiAyOC42NzA5IDM1LjEwOTkgMjguNDEzMyAzNC44NjA3TDE3LjYyOCAyNC4wMDkzWiIgZmlsbD0iIzI4QTlFMCIvPgo8L3N2Zz4K)
+    .slick-next
+      right: -70px
+      transform: rotate(180deg) translate(0, 50%)
+      &::before
+        content: ''
+        height: 48px
+        width: 48px
+        display: block
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IndoaXRlIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy42MjggMjQuMDA5M0wyOC40MTMzIDEzLjE3NjZDMjguNDIyMyAxMy4xNjc2IDI4LjQzMTkgMTMuMTU4IDI4LjQ0MDkgMTMuMTQ4NEMyOC42ODM1IDEyLjg4MzYgMjguNjcwOSAxMi40NjYzIDI4LjQxMzMgMTIuMjE3MkMyOC4yODQyIDEyLjA4NjkgMjguMTA5NSAxMi4wMTQyIDI3LjkyODggMTIuMDE0MkMyNy43NTM1IDEyLjAxNzIgMjcuNTg2NiAxMi4wOTA1IDI3LjQ2MjMgMTIuMjE3MkwxNi4xOTI1IDIzLjUyOTZDMTUuOTQwOSAyMy43OTY4IDE1Ljk0MDkgMjQuMjIxOSAxNi4xOTI1IDI0LjQ4OTFMMjcuNDYyMyAzNS44MjAxQzI3LjcyOTUgMzYuMDc4OSAyOC4xNDYyIDM2LjA3ODkgMjguNDEzMyAzNS44MjAxQzI4LjQyMjMgMzUuODEwNSAyOC40MzE5IDM1LjgwMTUgMjguNDQwOSAzNS43OTE5QzI4LjY4MzUgMzUuNTI3MiAyOC42NzA5IDM1LjEwOTkgMjguNDEzMyAzNC44NjA3TDE3LjYyOCAyNC4wMDkzWiIgZmlsbD0iIzI4QTlFMCIvPgo8L3N2Zz4K)
+    .slick-list
+      @media screen and (min-width: 768px)
+        margin-left: -10px
+        margin-right: -10px
+      .slick-track
+        display: flex !important
+        .slick-slide
+          height: inherit !important
+          div, .box
+            height: 100%
+          >div
+            @media screen and (min-width: 768px)
+              margin: 0 10px
+    .slick-dots
+      li
+        button
+          &::before
+            color: white
+      li.slick-active
+        button
+          &::before
+            color: white
+
+.header
+  padding: 0 10px
+  max-width: 1036px
+  margin: 0 auto
+  &__logo
+    padding: 23px 0
